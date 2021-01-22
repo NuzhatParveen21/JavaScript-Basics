@@ -6,7 +6,7 @@ function kilometerToMeter(kilometer) {
 
     // Alert for negative value
     if (kilometer == 0 || kilometer == null || kilometer < 0) {
-        return "Distance can't be negative, string 0 or null."
+        return "Distance can't be negative, 0 or null."
     }
     var meter = kilometer * 1000;   //converting distance into meter
     return meter;
@@ -43,18 +43,19 @@ console.log(sum);
 // Problem-3: hotelCost
 
 function hotelCost(days) {
+
     // Alert for less than 1 day
     if (days < 1) {
         return "Days can't be less than 1";
     }
     var totalCost = 0;
 
-    // Calculation of total hotel cost from 1st-10th days
+    // Calculate total hotel cost from 1st-10th days (100tk per night)
     if (days <= 10) {
         totalCost = days * 100;
     }
 
-    // Calcualtion for total hotel cost from 11th -20th days
+    // Calculate total hotel cost from 11th -20th days (80tk per night)
     else if (days <= 20) {
         var firstPart = 10 * 100;
         var remaining = days - 10;
@@ -62,7 +63,7 @@ function hotelCost(days) {
         totalCost = firstPart + secondPart;
     }
 
-    // Calculation for total hotel cost from 21st to rest of the days
+    // Calculate total hotel cost from 21st to rest of the days (50tk per night)
     else {
         var firstPart = 10 * 100;
         var secondPart = 10 * 80;
@@ -79,18 +80,20 @@ console.log(count);
 
 // Problem:4 - megaFriend
 
-function megaFriend(string, index){
-    if (index == 0){
-        longestWord = string;
-    } else{
-        if(string.length > longestWord.length){
-            longestWord = string;
-        }
+function megaFriend(){
+    var maxWord = [0];
+    for (var i=0; i < friends.length; i++){
+       var element = friends[i];
+        if (element.length > maxWord.length){
+            maxWord = element;
+        }      
     }
+    return maxWord;
 }
-var names = ['Taz', 'Sumaiya', 'Tumpa', 'Shorna', 'Ruba'];
-var longestWord = null;
-names.forEach(megaFriend)
-console.log(longestWord);
+
+var friends = ['Taz', 'Sumaiya', 'Tumpa', 'Shorna', 'Ruba'];
+var largestName = megaFriend(friends);
+console.log(largestName);
+
 
 
