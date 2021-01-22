@@ -28,7 +28,7 @@ function budgetCalculator(watch, mobile, laptop) {
     var mobileCost = mobile * 100;
     var laptopCost = laptop * 500;
 
-    // Calcualte total cost of electronics
+    // Calculate total cost of electronics
     var totalCost = (watchCost + mobileCost + laptopCost);
     return totalCost;
 }
